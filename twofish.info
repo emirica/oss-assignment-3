@@ -1,0 +1,15 @@
+Twofish:
+    - symmetric key block cipher
+    - block size + key sizes from 128 bits to 256 bits
+    - slower for 128-bit keys, faster for 256-bit keys
+    - encrypt mode:
+        - ECB electronic codebook
+        - CBC cipher block chaining
+        - CFB cipher feedback
+        - OFB output feedback, in 8bit
+        - NOFB output feedback, in nbit
+    - what it needs:
+        - plaintext
+        - mode
+        - key
+        - init vector (pentru mode cele cu feedback)
