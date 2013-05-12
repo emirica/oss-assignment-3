@@ -60,7 +60,7 @@ static uint64_t get_str_time(char *timebuf)
     struct tm *tm;
     uint64_t time;
     gettimeofday(&tv, &tz);
-    time = tv.tv_sec * 1000000000 + tv.tv_usec * 1000;
+    time = tv.tv_sec * 1000000 + tv.tv_usec;
     tm = localtime(&tv.tv_sec);
     memset(timebuf, 0, BUFSIZE);
     sprintf (timebuf, "%02d:%02d:%02d:%03ld",tm->tm_hour, tm->tm_min, tm->tm_sec, (tv.tv_usec/1000) );
@@ -73,41 +73,50 @@ static int do_encrypt(std::string passphrase, Botan::SecureVector<Botan::byte> s
 {
     // First, we turn the passphrase into an arbitrary length key to use
     // for the Twofish algorithm.
-    std::auto_ptr<PBKDF> pbkdf(get_pbkdf("PBKDF2(SHA-1)"));
-    const u32bit PBKDF2_ITERATIONS = 8192;
+    try {
+        std::auto_ptr<PBKDF> pbkdf(get_pbkdf("PBKDF2(SHA-1)"));
+        const u32bit PBKDF2_ITERATIONS = 8192;
 
-    SymmetricKey key = pbkdf->derive_key(key_len, "BLK" + passphrase,
-                                         &salt[0], salt.size(),
-                                         PBKDF2_ITERATIONS);
-    SymmetricKey mac_key = pbkdf->derive_key(16, "MAC" + passphrase,
+        SymmetricKey key = pbkdf->derive_key(key_len, "BLK" + passphrase,
                                              &salt[0], salt.size(),
                                              PBKDF2_ITERATIONS);
-    InitializationVector iv = pbkdf->derive_key(iv_len, "IVL" + passphrase,
-                                                &salt[0], salt.size(),
-                                                PBKDF2_ITERATIONS);
+        SymmetricKey mac_key = pbkdf->derive_key(16, "MAC" + passphrase,
+                                                 &salt[0], salt.size(),
+                                                 PBKDF2_ITERATIONS);
+        InitializationVector iv = pbkdf->derive_key(iv_len, "IVL" + passphrase,
+                                                    &salt[0], salt.size(),
+                                                    PBKDF2_ITERATIONS);
 
-    // Required header for the decryption phase
-    input_enc << ENC_HEADER << std::endl;
-    input_enc << b64_encode(salt) << std::endl;
+        // Required header for the decryption phase
+        input_enc << ENC_HEADER << std::endl;
+        input_enc << b64_encode(salt) << std::endl;
 
-    Pipe encryptor(new Fork(
-                            new Chain(
-                                      new MAC_Filter("HMAC(SHA-1)", mac_key),
-                                      new Base64_Encoder),
-                            new Chain(
-                                      get_cipher(algo + mode, key, iv, ENCRYPTION),
-                                      new Base64_Encoder(true)//,
-                                      //new DataSink_Stream(input_enc)
-                                     )
-                           )
-                  );
+        Pipe encryptor(new Fork(
+                                new Chain(
+                                          new MAC_Filter("HMAC(SHA-1)", mac_key),
+                                          new Base64_Encoder,
+                                          new DataSink_Stream(input_enc)
+                                         ),
+                                new Chain(
+                                          get_cipher(algo + mode, key, iv, ENCRYPTION),
+                                          new Base64_Encoder(true)
+                                         )
+                               )
+                      );
 
-    encryptor.start_msg();
-    input >> encryptor;
-    encryptor.end_msg();
+        encryptor.start_msg();
+        input >> encryptor;
+        encryptor.end_msg();
 
-    input_enc << encryptor.read_all_as_string(0) << std::endl;
-    input_enc << encryptor.read_all_as_string(1);
+        //input_enc << encryptor.read_all_as_string(0) << std::endl;
+        input_enc << std::endl;
+        input_enc << encryptor.read_all_as_string(1);
+
+    } catch (std::exception& e) {
+        std::cerr << "ERROR: caught exception " << e.what() << " for encrypt\n";
+        botan_out.close();
+        return 1;
+    }
 
     return 0;
 }
@@ -117,52 +126,60 @@ static int do_decrypt(std::string passphrase, const u32bit key_len,
 {
     int rc = 0;
 
-    std::string header, salt_str, mac_str;
-    std::getline(input_enc, header);
-    std::getline(input_enc, salt_str);
-    std::getline(input_enc, mac_str);
+    try {
+        std::string header, salt_str, mac_str;
+        std::getline(input_enc, header);
+        std::getline(input_enc, salt_str);
+        std::getline(input_enc, mac_str);
 
-    if (header != ENC_HEADER) {
-        std::cerr << "ERROR: File to decrypt doesn't contain encryption" <<std::endl;
-        return 1;
-    }
-    std::auto_ptr<PBKDF> pbkdf(get_pbkdf("PBKDF2(SHA-1)"));
-    const u32bit PBKDF2_ITERATIONS = 8192;
+        if (header != ENC_HEADER) {
+            std::cerr << "ERROR: File to decrypt doesn't contain encryption" <<std::endl;
+            return 1;
+        }
+        std::auto_ptr<PBKDF> pbkdf(get_pbkdf("PBKDF2(SHA-1)"));
+        const u32bit PBKDF2_ITERATIONS = 8192;
 
-    Botan::SecureVector<Botan::byte> salt = b64_decode(salt_str);
-    SymmetricKey key = pbkdf->derive_key(key_len, "BLK" + passphrase,
-                                         &salt[0], salt.size(),
-                                         PBKDF2_ITERATIONS);
-    SymmetricKey mac_key = pbkdf->derive_key(16, "MAC" + passphrase,
+        Botan::SecureVector<Botan::byte> salt = b64_decode(salt_str);
+        SymmetricKey key = pbkdf->derive_key(key_len, "BLK" + passphrase,
                                              &salt[0], salt.size(),
                                              PBKDF2_ITERATIONS);
-    InitializationVector iv = pbkdf->derive_key(iv_len, "IVL" + passphrase,
-                                                &salt[0], salt.size(),
-                                                PBKDF2_ITERATIONS);
+        SymmetricKey mac_key = pbkdf->derive_key(16, "MAC" + passphrase,
+                                                 &salt[0], salt.size(),
+                                                 PBKDF2_ITERATIONS);
+        InitializationVector iv = pbkdf->derive_key(iv_len, "IVL" + passphrase,
+                                                    &salt[0], salt.size(),
+                                                    PBKDF2_ITERATIONS);
 
-    Pipe decryptor(new Base64_Decoder,
-                   get_cipher(algo + mode, key, iv, DECRYPTION),
-                   new Fork(
-                            0,
-                            new Chain(
-                                      new MAC_Filter("HMAC(SHA-1)", mac_key),
-                                      new Base64_Encoder
-                                     )
-                           )
-                  );
+        Pipe decryptor(new Base64_Decoder,
+                       get_cipher(algo + mode, key, iv, DECRYPTION),
+                       new Fork(
+                                0,
+                                new Chain(
+                                          new MAC_Filter("HMAC(SHA-1)", mac_key),
+                                          new Base64_Encoder
+                                         )
+                               )
+                      );
 
-    decryptor.start_msg();
-    input_enc >> decryptor;
-    decryptor.end_msg();
+        decryptor.start_msg();
+        input_enc >> decryptor;
+        decryptor.end_msg();
 
-    std::string our_mac = decryptor.read_all_as_string(1);
+        std::string our_mac = decryptor.read_all_as_string(1);
 
-    if (our_mac != mac_str) {
-        std::cerr << "WARNING: MAC in message failed to verify\n";
+        if (our_mac != mac_str) {
+            std::cerr << "WARNING: MAC in message failed to verify\n";
+            rc = 1;
+        }
+
+        input_dec << decryptor.read_all_as_string(0);
+
+    } catch(std::exception& e) {
+        std::cerr << "ERROR: caught exception " << e.what() << " for decrypt\n";
+        botan_out.close();
         rc = 1;
-    }
 
-    input_dec << decryptor.read_all_as_string(0);
+    }
 
     return rc;
 }
@@ -250,7 +267,7 @@ int main(int nargc, char *argv[])
     // Test the speed of this implementation using different file sizes.
     // The output will be appended to the BOTAN_FILE and in the end the
     // three implementations will be checked against each other.
-    for (int i = 2; i <= 5; i++) {
+    for (int i = 2; i <= 6; i++) {
         // Open the input file
         std::stringstream ss;
         ss << i;
@@ -280,7 +297,7 @@ int main(int nargc, char *argv[])
         // Save encryption duration
         botan_out << "\t\t[" << timebuf << "] === Encryption for ";
         (stop_enc > start) ? diff = stop_enc - start : 0;
-        botan_out << file_sizes[i - 2] << " lasted " << diff << " [ns]\n";
+        botan_out << file_sizes[i - 2] << " lasted " << diff << " [us]\n";
 
         input_enc.close();
         input_enc.open((input_name + ss.str() + ".enc").c_str(), ios::in);
@@ -297,15 +314,15 @@ int main(int nargc, char *argv[])
         (rc == 0) ? botan_out << " passed\n" : botan_out << " failed\n";
         (stop > stop_enc) ? diff = stop - stop_enc : diff = 0;
         botan_out << "\t\t[" << timebuf << "] === Decryption for ";
-        botan_out << file_sizes[i - 2] << " lasted " <<  diff << " [ns]\n";
+        botan_out << file_sizes[i - 2] << " lasted " <<  diff << " [us]\n";
         (stop > start) ? diff = stop - start : diff = 0;
         botan_out << "\t[" << timebuf <<"] === Stop: Total time ";
-        botan_out << diff << "[ns] Speed " << file_sizes[i - 2] << " - Botan Twofish ===\n\n";
+        botan_out << diff << "[us] Speed " << file_sizes[i - 2] << " - Botan Twofish ===\n\n";
 
         input.close();
         input_enc.close();
         input_dec.close();
-        std::cout << "[ " << diff << " ns] Test for file " << file_sizes[i - 2] << " ended\n";
+        std::cout << "[ " << diff << " us] Test for file " << file_sizes[i - 2] << " ended\n";
     }
 
     get_str_time(timebuf);

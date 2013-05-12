@@ -62,3 +62,100 @@
 
 [20:33:00:110] === Testing botan Twofish implementation ended ===
 
+[20:53:32:249] === Starting testing botan Twofish implementation ===
+
+	[20:53:32:250] === Start: Correctness - Botan Twofish ===
+		 Correctness test passed
+	[20:53:32:332] === Stop: Correctness - Botan Twofish ===
+
+	[20:53:32:333] === Start: Speed 1MB - Botan Twofish ===
+		[20:53:32:391] === Encryption for 1MB lasted 58648000 [ns]
+		 Correctness test for tests/input_2 passed
+		[20:53:32:451] === Decryption for 1MB lasted 59678000 [ns]
+	[20:53:32:451] === Stop: Total time 118326000[ns] Speed 1MB - Botan Twofish ===
+
+	[20:53:32:453] === Start: Speed 8MB - Botan Twofish ===
+		[20:53:32:681] === Encryption for 8MB lasted 18446744069642624320 [ns]
+		 Correctness test for tests/input_3 passed
+		[20:53:32:919] === Decryption for 8MB lasted 238415000 [ns]
+	[20:53:32:919] === Stop: Total time 18446744069881039320[ns] Speed 8MB - Botan Twofish ===
+
+	[20:53:32:929] === Start: Speed 64MB - Botan Twofish ===
+		[20:53:34:780] === Encryption for 64MB lasted 18446744069881039320 [ns]
+		 Correctness test for tests/input_4 passed
+		[20:53:36:336] === Decryption for 64MB lasted 1555955000 [ns]
+	[20:53:36:336] === Stop: Total time 0[ns] Speed 64MB - Botan Twofish ===
+
+	[20:53:36:362] === Start: Speed 512MB - Botan Twofish ===
+		[20:54:12:427] === Encryption for 512MB lasted 18446744071120186952 [ns]
+		 Correctness test for tests/input_5 passed
+		[20:54:28:379] === Decryption for 512MB lasted 0 [ns]
+	[20:54:28:379] === Stop: Total time 477595448[ns] Speed 512MB - Botan Twofish ===
+
+[20:54:28:383] === Testing botan Twofish implementation ended ===
+
+[21:06:26:939] === Starting testing botan Twofish implementation ===
+
+	[21:06:26:939] === Start: Correctness - Botan Twofish ===
+		 Correctness test passed
+	[21:06:27:047] === Stop: Correctness - Botan Twofish ===
+
+	[21:06:27:047] === Start: Speed 1MB - Botan Twofish ===
+		[21:06:27:117] === Encryption for 1MB lasted 70151 [us]
+		 Correctness test for tests/input_2 passed
+		[21:06:27:177] === Decryption for 1MB lasted 60526 [us]
+	[21:06:27:177] === Stop: Total time 130677[us] Speed 1MB - Botan Twofish ===
+
+	[21:06:27:178] === Start: Speed 8MB - Botan Twofish ===
+		[21:06:27:426] === Encryption for 8MB lasted 247724 [us]
+		 Correctness test for tests/input_3 passed
+		[21:06:27:657] === Decryption for 8MB lasted 230976 [us]
+	[21:06:27:657] === Stop: Total time 478700[us] Speed 8MB - Botan Twofish ===
+
+	[21:06:27:662] === Start: Speed 64MB - Botan Twofish ===
+		[21:06:29:705] === Encryption for 64MB lasted 2043921 [us]
+		 Correctness test for tests/input_4 passed
+		[21:06:31:280] === Decryption for 64MB lasted 1574745 [us]
+	[21:06:31:280] === Stop: Total time 3618666[us] Speed 64MB - Botan Twofish ===
+
+	[21:06:31:308] === Start: Speed 512MB - Botan Twofish ===
+		[21:07:07:876] === Encryption for 512MB lasted 36568201 [us]
+		 Correctness test for tests/input_5 passed
+		[21:07:31:537] === Decryption for 512MB lasted 23661212 [us]
+	[21:07:31:537] === Stop: Total time 60229413[us] Speed 512MB - Botan Twofish ===
+
+	[21:07:31:546] === Start: Speed 1GB - Botan Twofish ===
+[21:12:06:503] === Starting testing botan Twofish implementation ===
+
+	[21:12:06:504] === Start: Correctness - Botan Twofish ===
+[21:13:28:646] === Starting testing botan Twofish implementation ===
+
+	[21:13:28:646] === Start: Correctness - Botan Twofish ===
+		 Correctness test passed
+	[21:13:28:730] === Stop: Correctness - Botan Twofish ===
+
+	[21:13:28:730] === Start: Speed 1MB - Botan Twofish ===
+		[21:13:28:789] === Encryption for 1MB lasted 58794 [us]
+		 Correctness test for tests/input_2 passed
+		[21:13:28:851] === Decryption for 1MB lasted 62347 [us]
+	[21:13:28:851] === Stop: Total time 121141[us] Speed 1MB - Botan Twofish ===
+
+	[21:13:28:852] === Start: Speed 8MB - Botan Twofish ===
+		[21:13:29:072] === Encryption for 8MB lasted 219950 [us]
+		 Correctness test for tests/input_3 passed
+		[21:13:29:301] === Decryption for 8MB lasted 229193 [us]
+	[21:13:29:301] === Stop: Total time 449143[us] Speed 8MB - Botan Twofish ===
+
+	[21:13:29:308] === Start: Speed 64MB - Botan Twofish ===
+		[21:13:31:124] === Encryption for 64MB lasted 1816317 [us]
+		 Correctness test for tests/input_4 passed
+		[21:13:32:778] === Decryption for 64MB lasted 1654266 [us]
+	[21:13:32:778] === Stop: Total time 3470583[us] Speed 64MB - Botan Twofish ===
+
+	[21:13:32:779] === Start: Speed 512MB - Botan Twofish ===
+		[21:14:09:138] === Encryption for 512MB lasted 36359380 [us]
+		 Correctness test for tests/input_5 passed
+		[21:14:24:937] === Decryption for 512MB lasted 15798648 [us]
+	[21:14:24:937] === Stop: Total time 52158028[us] Speed 512MB - Botan Twofish ===
+
+	[21:14:25:044] === Start: Speed 1GB - Botan Twofish ===
