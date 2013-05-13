@@ -38,3 +38,23 @@
 
 [13:43:28:503] === Testing botan Twofish implementation ended ===
 
+[13:47:51:485] === Starting testing cryptopp Twofish implementation ===
+
+	[13:47:51:485] === Start: Speed 2.6KB - CryptoPP Twofish ===
+		[13:47:51:536] === Encryption for 2.6KB lasted 50985 [us]
+		 Correctness test for tests/input_1 failed
+		[13:47:51:536] === Decryption for 2.6KB lasted 120 [us]
+	[13:47:51:536] === Stop: Total time 51105[us] Speed 2.6KB - CryptoPP Twofish ===
+
+[13:47:51:542] === Testing botan Twofish implementation ended ===
+
+[13:48:15:269] === Starting testing cryptopp Twofish implementation ===
+
+	[13:48:15:269] === Start: Speed 2.6KB - CryptoPP Twofish ===
+		[13:48:15:284] === Encryption for 2.6KB lasted 15299 [us]
+		 Correctness test for tests/input_1 failed
+		[13:48:15:285] === Decryption for 2.6KB lasted 202 [us]
+	[13:48:15:285] === Stop: Total time 15501[us] Speed 2.6KB - CryptoPP Twofish ===
+
+[13:48:15:313] === Testing botan Twofish implementation ended ===
+
