@@ -1,0 +1,120 @@
+[15:46:14:186] === Starting testinggcrypt Twofish implementation ===
+
+	[15:46:14:186] === Start: Speed 2.6KB - Gcrypt Twofish ===
+		[15:46:14:186] === Encryption for 2.6KB lasted 209 [us]
+		 Correctness test for tests/input_1 passed
+		[15:46:14:187] === Decryption for 2.6KB lasted 83 [us]
+	[15:46:14:187] === Stop: Total time 292[us] Speed 2.6KB - gcrypt Twofish ===
+
+	[15:46:14:188] === Start: Speed 1MB - Gcrypt Twofish ===
+		[15:46:14:213] === Encryption for 1MB lasted 24611 [us]
+		 Correctness test for tests/input_2 passed
+		[15:46:14:238] === Decryption for 1MB lasted 25760 [us]
+	[15:46:14:238] === Stop: Total time 50371[us] Speed 1MB - gcrypt Twofish ===
+
+	[15:46:14:240] === Start: Speed 8MB - Gcrypt Twofish ===
+		[15:46:14:416] === Encryption for 8MB lasted 176119 [us]
+		 Correctness test for tests/input_3 passed
+		[15:46:14:582] === Decryption for 8MB lasted 166043 [us]
+	[15:46:14:582] === Stop: Total time 342162[us] Speed 8MB - gcrypt Twofish ===
+
+	[15:46:14:587] === Start: Speed 64MB - Gcrypt Twofish ===
+		[15:46:16:077] === Encryption for 64MB lasted 1489631 [us]
+		 Correctness test for tests/input_4 passed
+		[15:46:17:528] === Decryption for 64MB lasted 1450938 [us]
+	[15:46:17:528] === Stop: Total time 2940569[us] Speed 64MB - gcrypt Twofish ===
+
+	[15:46:17:564] === Start: Speed 512MB - Gcrypt Twofish ===
+		[15:46:32:608] === Encryption for 512MB lasted 15043349 [us]
+		 Correctness test for tests/input_5 passed
+		[15:46:47:162] === Decryption for 512MB lasted 14554181 [us]
+	[15:46:47:162] === Stop: Total time 29597530[us] Speed 512MB - gcrypt Twofish ===
+
+	[15:46:52:693] === Start: Speed 1GB - Gcrypt Twofish ===
+		[15:47:22:243] === Encryption for 1GB lasted 29549197 [us]
+		 Correctness test for tests/input_6 passed
+		[15:48:03:146] === Decryption for 1GB lasted 40903028 [us]
+	[15:48:03:146] === Stop: Total time 70452225[us] Speed 1GB - gcrypt Twofish ===
+
+[15:48:27:791] === Testing gcryptTwofish implementation ended ===
+
+[01:26:21:065] === Starting testing gcrypt Twofish implementation ===
+
+	[01:26:21:066] === Start: Speed 2.6KB - Gcrypt Twofish ===
+		[01:26:21:067] === Encryption for 2.6KB lasted 1721 [us]
+		 Correctness test for tests/input_1 passed
+		[01:26:21:067] === Decryption for 2.6KB lasted 94 [us]
+	[01:26:21:067] === Stop: Total time 1815[us] Speed 2.6KB - gcrypt Twofish ===
+
+	[01:26:21:069] === Start: Speed 1MB - Gcrypt Twofish ===
+		[01:26:21:126] === Encryption for 1MB lasted 57078 [us]
+		 Correctness test for tests/input_2 passed
+		[01:26:21:146] === Decryption for 1MB lasted 19391 [us]
+	[01:26:21:146] === Stop: Total time 76469[us] Speed 1MB - gcrypt Twofish ===
+
+	[01:26:21:147] === Start: Speed 8MB - Gcrypt Twofish ===
+		[01:26:21:371] === Encryption for 8MB lasted 224035 [us]
+		 Correctness test for tests/input_3 passed
+		[01:26:21:578] === Decryption for 8MB lasted 206410 [us]
+	[01:26:21:578] === Stop: Total time 430445[us] Speed 8MB - gcrypt Twofish ===
+
+	[01:26:21:584] === Start: Speed 64MB - Gcrypt Twofish ===
+		[01:26:24:960] === Encryption for 64MB lasted 3376651 [us]
+		 Correctness test for tests/input_4 passed
+		[01:26:26:525] === Decryption for 64MB lasted 1564703 [us]
+	[01:26:26:525] === Stop: Total time 4941354[us] Speed 64MB - gcrypt Twofish ===
+
+	[01:26:26:557] === Start: Speed 512MB - Gcrypt Twofish ===
+		[01:26:44:524] === Encryption for 512MB lasted 17967111 [us]
+		 Correctness test for tests/input_5 passed
+		[01:26:58:182] === Decryption for 512MB lasted 13657826 [us]
+	[01:26:58:182] === Stop: Total time 31624937[us] Speed 512MB - gcrypt Twofish ===
+
+	[01:27:03:544] === Start: Speed 1GB - Gcrypt Twofish ===
+		[01:27:49:142] === Encryption for 1GB lasted 45597909 [us]
+		 Correctness test for tests/input_6 passed
+		[01:28:24:631] === Decryption for 1GB lasted 35488406 [us]
+	[01:28:24:631] === Stop: Total time 81086315[us] Speed 1GB - gcrypt Twofish ===
+
+[01:28:50:299] === Testing gcrypt Twofish implementation ended ===
+
+[02:04:02:513] === Starting testing gcrypt Twofish implementation ===
+
+	[02:04:02:521] === Start: Speed 2.6KB - Gcrypt Twofish ===
+		[02:04:02:534] === Encryption for 2.6KB lasted 12745 [us]
+		 Correctness test for tests/input_1 passed
+		[02:04:02:534] === Decryption for 2.6KB lasted 116 [us]
+	[02:04:02:534] === Stop: Total time 12861[us] Speed 2.6KB - gcrypt Twofish ===
+
+	[02:04:02:536] === Start: Speed 1MB - Gcrypt Twofish ===
+		[02:04:02:624] === Encryption for 1MB lasted 87704 [us]
+		 Correctness test for tests/input_2 passed
+		[02:04:02:643] === Decryption for 1MB lasted 19518 [us]
+	[02:04:02:643] === Stop: Total time 107222[us] Speed 1MB - gcrypt Twofish ===
+
+	[02:04:02:645] === Start: Speed 8MB - Gcrypt Twofish ===
+		[02:04:02:832] === Encryption for 8MB lasted 187342 [us]
+		 Correctness test for tests/input_3 passed
+		[02:04:02:987] === Decryption for 8MB lasted 154953 [us]
+	[02:04:02:987] === Stop: Total time 342295[us] Speed 8MB - gcrypt Twofish ===
+
+	[02:04:02:992] === Start: Speed 64MB - Gcrypt Twofish ===
+		[02:04:04:585] === Encryption for 64MB lasted 1593415 [us]
+		 Correctness test for tests/input_4 passed
+		[02:04:05:908] === Decryption for 64MB lasted 1323249 [us]
+	[02:04:05:908] === Stop: Total time 2916664[us] Speed 64MB - gcrypt Twofish ===
+
+	[02:04:05:939] === Start: Speed 512MB - Gcrypt Twofish ===
+		[02:04:32:248] === Encryption for 512MB lasted 26308708 [us]
+		 Correctness test for tests/input_5 passed
+		[02:04:43:972] === Decryption for 512MB lasted 11723765 [us]
+	[02:04:43:972] === Stop: Total time 38032473[us] Speed 512MB - gcrypt Twofish ===
+
+	[02:04:46:329] === Start: Speed 1GB - Gcrypt Twofish ===
+		[02:05:17:399] === Encryption for 1GB lasted 31069224 [us]
+		 Correctness test for tests/input_6 passed
+		[02:05:48:879] === Decryption for 1GB lasted 31479935 [us]
+	[02:05:48:879] === Stop: Total time 62549159[us] Speed 1GB - gcrypt Twofish ===
+
+[02:06:08:618] === Testing gcrypt Twofish implementation ended ===
+

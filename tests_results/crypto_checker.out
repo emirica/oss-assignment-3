@@ -58,3 +58,83 @@
 
 [13:48:15:313] === Testing botan Twofish implementation ended ===
 
+[01:38:39:967] === Starting testing cryptopp Twofish implementation ===
+
+	[01:38:39:983] === Start: Speed 2.6KB - CryptoPP Twofish ===
+		[01:38:40:018] === Encryption for 2.6KB lasted 34534 [us]
+		 Correctness test for tests/input_1 passed
+		[01:38:40:018] === Decryption for 2.6KB lasted 130 [us]
+	[01:38:40:018] === Stop: Total time 34664[us] Speed 2.6KB - CryptoPP Twofish ===
+
+	[01:38:40:110] === Start: Speed 1MB - CryptoPP Twofish ===
+		[01:38:40:152] === Encryption for 1MB lasted 42245 [us]
+		 Correctness test for tests/input_2 passed
+		[01:38:40:161] === Decryption for 1MB lasted 9398 [us]
+	[01:38:40:161] === Stop: Total time 51643[us] Speed 1MB - CryptoPP Twofish ===
+
+	[01:38:40:163] === Start: Speed 8MB - CryptoPP Twofish ===
+		[01:38:40:321] === Encryption for 8MB lasted 158206 [us]
+		 Correctness test for tests/input_3 passed
+		[01:38:40:400] === Decryption for 8MB lasted 78991 [us]
+	[01:38:40:400] === Stop: Total time 237197[us] Speed 8MB - CryptoPP Twofish ===
+
+	[01:38:40:406] === Start: Speed 64MB - CryptoPP Twofish ===
+		[01:38:41:845] === Encryption for 64MB lasted 1439002 [us]
+		 Correctness test for tests/input_4 passed
+		[01:38:42:499] === Decryption for 64MB lasted 654903 [us]
+	[01:38:42:499] === Stop: Total time 2093905[us] Speed 64MB - CryptoPP Twofish ===
+
+	[01:38:42:532] === Start: Speed 512MB - CryptoPP Twofish ===
+		[01:39:00:796] === Encryption for 512MB lasted 18264635 [us]
+		 Correctness test for tests/input_5 passed
+		[01:39:08:088] === Decryption for 512MB lasted 7292289 [us]
+	[01:39:08:088] === Stop: Total time 25556924[us] Speed 512MB - CryptoPP Twofish ===
+
+	[01:39:13:078] === Start: Speed 1GB - CryptoPP Twofish ===
+		[01:39:46:354] === Encryption for 1GB lasted 33276171 [us]
+		 Correctness test for tests/input_6 passed
+		[01:40:14:865] === Decryption for 1GB lasted 28510621 [us]
+	[01:40:14:865] === Stop: Total time 61786792[us] Speed 1GB - CryptoPP Twofish ===
+
+[01:40:25:917] === Testing botan Twofish implementation ended ===
+
+[01:57:10:270] === Starting testing cryptopp Twofish implementation ===
+
+	[01:57:10:273] === Start: Speed 2.6KB - CryptoPP Twofish ===
+		[01:57:10:313] === Encryption for 2.6KB lasted 40016 [us]
+		 Correctness test for tests/input_1 passed
+		[01:57:10:313] === Decryption for 2.6KB lasted 125 [us]
+	[01:57:10:313] === Stop: Total time 40141[us] Speed 2.6KB - CryptoPP Twofish ===
+
+	[01:57:10:341] === Start: Speed 1MB - CryptoPP Twofish ===
+		[01:57:10:384] === Encryption for 1MB lasted 42712 [us]
+		 Correctness test for tests/input_2 passed
+		[01:57:10:393] === Decryption for 1MB lasted 9017 [us]
+	[01:57:10:393] === Stop: Total time 51729[us] Speed 1MB - CryptoPP Twofish ===
+
+	[01:57:10:394] === Start: Speed 8MB - CryptoPP Twofish ===
+		[01:57:10:541] === Encryption for 8MB lasted 147033 [us]
+		 Correctness test for tests/input_3 passed
+		[01:57:10:615] === Decryption for 8MB lasted 74282 [us]
+	[01:57:10:615] === Stop: Total time 221315[us] Speed 8MB - CryptoPP Twofish ===
+
+	[01:57:10:621] === Start: Speed 64MB - CryptoPP Twofish ===
+		[01:57:11:771] === Encryption for 64MB lasted 1150406 [us]
+		 Correctness test for tests/input_4 passed
+		[01:57:12:420] === Decryption for 64MB lasted 648748 [us]
+	[01:57:12:420] === Stop: Total time 1799154[us] Speed 64MB - CryptoPP Twofish ===
+
+	[01:57:12:451] === Start: Speed 512MB - CryptoPP Twofish ===
+		[01:57:31:325] === Encryption for 512MB lasted 18874151 [us]
+		 Correctness test for tests/input_5 passed
+		[01:57:36:862] === Decryption for 512MB lasted 5537644 [us]
+	[01:57:36:862] === Stop: Total time 24411795[us] Speed 512MB - CryptoPP Twofish ===
+
+	[01:57:40:623] === Start: Speed 1GB - CryptoPP Twofish ===
+		[01:58:18:378] === Encryption for 1GB lasted 37755273 [us]
+		 Correctness test for tests/input_6 passed
+		[01:58:49:902] === Decryption for 1GB lasted 31523828 [us]
+	[01:58:49:902] === Stop: Total time 69279101[us] Speed 1GB - CryptoPP Twofish ===
+
+[01:59:12:031] === Testing botan Twofish implementation ended ===
+
