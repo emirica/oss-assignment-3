@@ -1,6 +1,9 @@
 # Name: Emma Mirică
 # Project: OSS
 # Assignment 3 - Encryption API Benchmark
+#
+
+all: gcrypt_checker botan_checker crypto_checker
 
 gcrypt_checker: gcrypt_checker.c
 	gcc -o $@ -Wall -g gcrypt_checker.c -lgcrypt
