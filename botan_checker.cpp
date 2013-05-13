@@ -52,7 +52,7 @@ static std::string b64_encode(const Botan::SecureVector<Botan::byte>& in)
     return pipe.read_all_as_string();
 }
 
-// Return in ns the current time and also, write the current time in timebuf
+// Return in us the current time and also, write the current time in timebuf
 static uint64_t get_str_time(char *timebuf)
 {
     struct timeval tv;
