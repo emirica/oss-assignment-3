@@ -1,19 +1,128 @@
 Botan:
     * Speed:
+        * less than 3 minutes
     * Memory consumption
-    * CPU consumption
+        * there was more memory consumption than libgcrypt
+    * CPU consumption:
+        * Between 50% - 95%
+        * the system was pretty loaded
     * Easy to use:
+        * It wasn't that easy to use (maybe because it was the first library I
+        tested, but I took some time to understand how to use it, how to compile
+        it, how to install it and so on)
+        * Good part: it is well documented
+        * Easy to use when it comes to block ciphers, as it is very "generic"
+    * Test correction:
+        * OK
+    Tests:
+        * 2.6KB:
+            * speed: 156898 us
+            * memory: unnoticeable
+            * cpu: unnoticeable
+        * 1MB:
+            * speed: 181552 us
+            * memory: unnoticeable
+            * cpu: unnoticeable
+        * 8MB:
+            * speed: 688425 us
+            * memory: unnoticeable
+            * cpu: unnoticeable
+        * 64MB:
+            * speed: 3380972 us
+            * memory: unnoticeable
+            * cpu: unnoticeable
+        * 512MB:
+            * speed: 27328624 us
+            * memory: irrelevant
+            * cpu: 30-70% cpu
+        * 1GB:
+            * speed: 68627081 us
+            * memory: irrelevant
+            * cpu: 40-70%
 
 Crypto++
     * Speed:
+        * less than 3 minutes
     * Memory consumption
+        * doing ok with the memory consumption
     * CPU consumption
-    * Easy to use
+        * between 50%-90%
+        * the system was very stable
+    * Easy to use:
+        * I think this is the easiest to use library. Very similar to botan, it
+        was very easy to write a encryption and decryption test.
+        * Well documented
+    * Test correction:
+        * OK
+    Tests:
+        * 2.6KB:
+            * speed: 40141 us
+            * memory: unnoticeable
+            * cpu: unnoticeable
+        * 1MB:
+            * speed: 51729 us
+            * memory: unnoticeable
+            * cpu: unnoticeable
+        * 8MB:
+            * speed: 221315 us
+            * memory: unnoticeable
+            * cpu: unnoticeable
+        * 64MB:
+            * speed: 1799154 us
+            * memory: unnoticeable
+            * cpu: unnoticeable
+        * 512MB:
+            * speed: 24411795 us
+            * memory: irrelevant
+            * cpu: 40-70%
+        * 1GB:
+            * speed: 69279101 us
+            * memory: irrelevant
+            * cpu: 40-70% (more on 40-50%)
 
 Libgcrypt:
     * Speed:
-    * Memory consumption
-    * CPU consumption
+        * pretty fast, the entire test lasted less than 3 minutes
+    * Memory consumption:
+        * not very much memory is consumed
+    * CPU consumption:
+        * between 50% - 90%
     * Easy to use:
+        * not very intuitive sometimes
+        * not well documented
+    * Test correction:
+        * OK
+    Tests:
+        * 2.6KB:
+            * speed: 12861 us
+            * memory: unnoticeable
+            * cpu: unnoticeable
+        * 1MB:
+            * speed: 107222 us
+            * memory: unnoticeable
+            * cpu: unnoticeable
+        * 8MB:
+            * speed: 342295 us
+            * memory: unnoticeable
+            * cpu: unnoticeable
+        * 64MB:
+            * speed: 2916664 us
+            * memory: unnoticeable
+            * cpu: unnoticeable
+        * 512MB:
+            * speed: 38032473 us
+            * memory: irrelevant
+            * cpu: 40-95%
+        * 1GB:
+            * speed: 62549159 us
+            * memory: irrelevant
+            * cpu: 65-86%
 
 Final conclusion:
+    * I would choose crypto++:
+        * It was very easy to use
+        * It is pretty fast
+        * and the system seems stable when running these tests
+    * I didn't see big deviations regarding the speed. All implementations are
+    similar regarding the speed.
+    * For more relevant speed tests, check out the tests_results folder
