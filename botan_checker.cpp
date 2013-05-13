@@ -359,10 +359,10 @@ int main(int nargc, char *argv[])
         uint64_t stop = get_str_time(timebuf);
 
         // Write useful output
-        (stop > stop_enc) ? diff = stop - stop_enc : diff = 0;
+        diff = (stop > stop_enc) ? (stop - stop_enc) : 0;
         botan_out << "\t\t[" << timebuf << "] === Decryption for ";
         botan_out << file_sizes[i - 1] << " lasted " <<  diff << " [us]\n";
-        (stop > start) ? diff = stop - start : diff = 0;
+        diff = (stop > start) ? (stop - start) : 0;
         botan_out << "\t[" << timebuf <<"] === Stop: Total time ";
         botan_out << diff << "[us] Speed " << file_sizes[i - 1] << " - Botan Twofish ===\n\n";
 

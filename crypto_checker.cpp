@@ -161,10 +161,10 @@ int main(int nargc, char *argv[])
         int rc = system(diff_string.c_str());
         crypto_out << "\t\t Correctness test for " << input_name << i;
         (rc == 0) ? crypto_out << " passed\n" : crypto_out << " failed\n";
-        (stop > stop_enc) ? diff = stop - stop_enc : diff = 0;
+        diff = (stop > stop_enc) ? (stop - stop_enc) : 0;
         crypto_out << "\t\t[" << timebuf << "] === Decryption for ";
         crypto_out << file_sizes[i - 1] << " lasted " <<  diff << " [us]\n";
-        (stop > start) ? diff = stop - start : diff = 0;
+        diff = (stop > start) ? (stop - start) : 0;
         crypto_out << "\t[" << timebuf <<"] === Stop: Total time ";
         crypto_out << diff << "[us] Speed " << file_sizes[i - 1] << " - CryptoPP Twofish ===\n\n";
 
