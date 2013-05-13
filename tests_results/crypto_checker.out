@@ -1,0 +1,40 @@
+[13:41:49:418] === Starting testing cryptopp Twofish implementation ===
+
+	[13:41:49:418] === Start: Speed 2.6KB - CryptoPP Twofish ===
+		[13:41:49:434] === Encryption for 2.6KB lasted 15583 [us]
+		 Correctness test for tests/input_1 passed
+		[13:41:49:434] === Decryption for 2.6KB lasted 76 [us]
+	[13:41:49:434] === Stop: Total time 15659[us] Speed 2.6KB - CryptoPP Twofish ===
+
+	[13:41:49:472] === Start: Speed 1MB - CryptoPP Twofish ===
+		[13:41:49:509] === Encryption for 1MB lasted 37410 [us]
+		 Correctness test for tests/input_2 passed
+		[13:41:49:518] === Decryption for 1MB lasted 8756 [us]
+	[13:41:49:518] === Stop: Total time 46166[us] Speed 1MB - CryptoPP Twofish ===
+
+	[13:41:49:520] === Start: Speed 8MB - CryptoPP Twofish ===
+		[13:41:49:638] === Encryption for 8MB lasted 118526 [us]
+		 Correctness test for tests/input_3 passed
+		[13:41:49:708] === Decryption for 8MB lasted 70213 [us]
+	[13:41:49:708] === Stop: Total time 188739[us] Speed 8MB - CryptoPP Twofish ===
+
+	[13:41:49:714] === Start: Speed 64MB - CryptoPP Twofish ===
+		[13:41:50:541] === Encryption for 64MB lasted 827259 [us]
+		 Correctness test for tests/input_4 passed
+		[13:41:51:187] === Decryption for 64MB lasted 645852 [us]
+	[13:41:51:187] === Stop: Total time 1473111[us] Speed 64MB - CryptoPP Twofish ===
+
+	[13:41:51:221] === Start: Speed 512MB - CryptoPP Twofish ===
+		[13:42:01:277] === Encryption for 512MB lasted 10056466 [us]
+		 Correctness test for tests/input_5 passed
+		[13:42:08:661] === Decryption for 512MB lasted 7383320 [us]
+	[13:42:08:661] === Stop: Total time 17439786[us] Speed 512MB - CryptoPP Twofish ===
+
+	[13:42:11:079] === Start: Speed 1GB - CryptoPP Twofish ===
+		[13:42:35:739] === Encryption for 1GB lasted 24660221 [us]
+		 Correctness test for tests/input_6 passed
+		[13:43:09:809] === Decryption for 1GB lasted 34070300 [us]
+	[13:43:09:809] === Stop: Total time 58730521[us] Speed 1GB - CryptoPP Twofish ===
+
+[13:43:28:503] === Testing botan Twofish implementation ended ===
+
