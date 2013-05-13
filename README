@@ -59,3 +59,13 @@ botan:
         * $ ./configure.py
         * $ make; make check
         * # make install
+
+cryptopp:
+    * install from sources, or simple use apt-get install for libcrypt++9(-dev,
+    -doc, -utils etc)
+    * Examples and other documentation:
+        * http://www.mail-archive.com/cryptopp-users@googlegroups.com/msg05799.html
+        * http://permalink.gmane.org/gmane.comp.encryption.cryptopp/2149
+        * http://andreyvit.livejournal.com/37576.html
+        * http://www.cplusplus.com/forum/beginner/60604/
+        * http://www.cryptopp.com/fom-serve/cache/79.html
